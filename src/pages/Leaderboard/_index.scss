@@ -1,0 +1,11 @@
+.leaderboard-title {
+  @include page-title;
+  margin: 2rem 0;
+}
+
+
+@media screen and (max-width: $mobile-750) {
+  .leaderboard-title {
+    font-size: 1.7rem;
+  }
+}

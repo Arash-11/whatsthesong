@@ -1,0 +1,52 @@
+.timer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: $color_6;
+  @include material-design-shadow;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    background-color: $color_6;
+    border-radius: 50px;
+    @include material-design-shadow;
+  }
+
+  &::before {
+    top: -12px;
+    width: 1.6rem;
+  }
+
+  &::after {
+    top: 8px;
+    right: -11px;
+    width: 1.1rem;
+    transform: rotate(52deg);
+  }
+
+  span {
+    color: $color_7;
+    font-family: $font_3;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .timer {
+    margin-right: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    span {
+      font-size: 1.6rem;
+    }
+  }
+}

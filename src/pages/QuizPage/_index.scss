@@ -1,0 +1,248 @@
+.quiz-page-container {
+  display: flex;
+  justify-content: center;
+  gap: 9rem;
+  max-width: $content_max_width;
+  margin: 2rem auto 0;
+  padding-top: $page_padding_top;
+}
+
+
+.quiz-container {
+  flex-grow: 1;
+  max-width: $content_max_width / 1.5;
+}
+
+.quiz-number {
+  margin-right: auto;
+  font-family: $font_2;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: $color_4;
+}
+
+
+.quiz-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  img {
+    margin: 0.5rem auto 0 3rem;
+    transform: scale(1.7);
+  }
+}
+
+
+.play-btn {
+  @include button;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  color: $color_6;
+
+  &:focus {
+    outline: $color_6 solid 2px;
+    outline-offset: 6px;
+  }
+
+  .control-circle {
+    margin-right: 0.5rem;
+    font-size: 3rem;
+  }
+}
+
+
+.disable {
+  pointer-events: none;
+  @include material-design-shadow;
+}
+
+
+.song-submit-form {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem auto;
+
+  label {
+    margin-bottom: 1rem;
+    width: 100%;
+    color: $color_2;
+    text-transform: none;
+    font-family: $font_3;
+    font-size: 1.1rem;
+  }
+
+  input {
+    padding: 1.5rem 1.2rem;
+    width: 100%;
+    border: none;
+    border-radius: $border_radius;
+    background-color: $color_2;
+    font-family: $font_3;
+    font-size: 1.1rem;
+    @include material-design-shadow-3;
+    &:focus {
+      outline: $color_2 solid 1px;
+      outline-offset: 2px;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 2.7rem;
+    right: 0.4rem;
+    @include button;
+    @include material-design-shadow;
+    padding: 1rem 1.2rem;
+    margin: 0;
+    width: 25%;
+    background-color: $color_6;
+    color: $color_2;
+    font-size: 1.3rem;
+    font-weight: 700;
+    &:hover {
+      box-shadow: none;
+      filter: brightness(95%);
+    }
+    &:focus {
+      outline-offset: 2px;
+    }
+  }
+
+  .no-pointer {
+    pointer-events: none;
+  }
+}
+
+
+.result {
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 7px;
+  background-color: $color_2;
+  color: $color_0;
+  text-align: center;
+  @include material-design-shadow-3;
+
+  .song-title {
+    margin-bottom: 1rem;
+    font-family: $font_2;
+    font-size: 1.6rem;
+    font-style: italic;
+  }
+
+  .artist {
+    margin-left: 1rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    font-style: normal;
+  }
+
+  p {
+    font-family: $font_3;
+    font-size: 1.3rem;
+  }
+}
+
+.result-matches p {
+  color: $color_6;
+}
+
+.result-different p {
+  color: $color_5;
+}
+
+
+.continue-btn {
+  @include button;
+  width: 100%;
+  padding: 1.2rem 0;
+  margin: 3rem 0 3rem 50%;
+  transform: translateX(-50%);
+  color: $color_6;
+  font-size: 1.6rem;
+  animation: fadeIn 1s 0s;
+  &:focus {
+    outline-color: $color_6;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .quiz-page-container {
+    margin-top: 1rem;
+    max-width: 90vw;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .quiz-number {
+    font-size: 1.1rem;
+  }
+
+  .quiz-controls img {
+    margin: 0.5rem auto 0 3rem;
+    transform: scale(1.5);
+  }
+
+  .play-btn {
+    margin: 1rem 0;
+    padding: 1.3rem 0;
+    width: 40%;
+    font-size: 1.3rem;
+    .control-circle {
+      font-size: 2.5rem;
+    }
+  }
+
+  .song-submit-form {
+    margin: 3rem auto 4rem;
+    label {
+      font-size: 1rem;
+    }
+    input {
+      padding: 1.2rem 1rem;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.7rem 1rem;
+      width: 25%;
+      font-size: 1rem;
+    }
+  }
+
+  .result {
+    padding: 1.3rem;
+    .song-title {
+      font-size: 1.3rem;
+    }
+    .artist {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .continue-btn {
+    padding: 1.1rem 0;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+}

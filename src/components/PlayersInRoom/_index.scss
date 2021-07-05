@@ -1,0 +1,31 @@
+.players-container {
+  width: 15rem;
+  color: $color_2;
+  font-family: $font_3;
+  text-align: center;
+  
+  li {
+    @include players-list;
+    @include material-design-shadow;
+    margin: 1rem auto;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+
+  .player-name {
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .players-container {
+    width: 100%;
+    li {
+      font-size: 1.1rem;
+    }
+  }
+}

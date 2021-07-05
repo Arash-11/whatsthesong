@@ -1,0 +1,25 @@
+.spotify-login-btn {
+  @include button;
+  width: 30rem;
+  border: none;
+  border-radius: 10px;
+  color: $color_6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: $font_3;
+  font-weight: 500;
+  &:hover {
+    margin-top: 1px;
+  }
+  &:focus {
+    outline-color: $color_6;
+  }
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .spotify-login-btn {
+    width: 20rem;
+    font-size: 1.3rem;
+  }
+}

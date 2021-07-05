@@ -1,0 +1,119 @@
+.header-nav {
+  ul {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: $content_max_width;
+    text-align: center;
+  }
+}
+
+
+.header-nav-item {
+  font-family: $font_2;
+  a {
+    color: $color_2;
+    &:focus {
+      outline: $header_outline_style;
+      outline-offset: 3px;
+    }
+  }
+
+  &.logo {
+    margin-right: auto;
+    font-size: 1.1rem;
+    font-family: $font_1;
+  }
+
+  &.leaderboard {
+    margin: auto 6rem auto auto;
+    font-size: $header_nav_font_size;
+  }
+}
+
+
+.header-nav-item.username {
+  position: relative;
+  margin: auto 0;
+  margin: 2rem 1rem 2rem 1.8rem;
+  background-color: none;
+  color: $color_2;
+
+  .username-btn {
+    display: flex;
+    align-items: center;
+    color: $color_2;
+    background: transparent;
+    font-family: $font_2;
+    font-size: $header_nav_font_size;
+    .icon {
+      margin-right: 0.5rem;
+      font-size: 1.5rem;
+      pointer-events: none;
+    }
+  }
+}
+
+
+.account-dropdown {
+  position: absolute;
+  right: 1rem;
+  margin-top: 1rem;
+  width: 120%;
+  border-radius: 2px;
+  background-color: $color_2;
+  @include material-design-shadow-2;
+  z-index: 1;
+
+  .logout-btn {
+    padding: $input_padding;
+    background: transparent;
+    color: $color_0;
+    font-size: 1.2rem;
+    font-family: $font_3;
+  }
+}
+
+
+@media screen and (max-width: $mobile-750) {
+  .header-nav ul {
+    width: 100%;
+  }
+
+  .header-nav-item {
+    &.logo {
+      margin: auto;
+      font-size: 0.9rem;
+    }
+    &.leaderboard {
+      margin-right: 0;
+      font-size: $header_nav_font_size_mobile;
+    }
+  }
+
+  .header-nav-item.username {
+    margin-left: 1rem;
+    .username-btn {
+      font-size: $header_nav_font_size_mobile;
+      .icon {
+        margin-right: 0.3rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: $mobile-750) and (max-width: $tablet-1200) {
+  .header-nav {
+    margin: auto;
+    width: 90vw;
+    ul {
+      width: 100%;
+    }
+  }
+
+  .header-nav-item.leaderboard {
+    margin-right: 3rem;
+  }
+}

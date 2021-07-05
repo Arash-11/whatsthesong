@@ -1,0 +1,59 @@
+.create-room-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.modal-id-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $input_padding;
+  width: 80%;
+  height: 5rem;
+  border-radius: $border_radius;
+  background-color: $color_2;
+  color: $color_0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.clipboard-icon {
+  position: absolute;
+  right: 1.5rem;
+  margin-left: 5rem;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: $color_6 dashed 3px;
+    outline-offset: 2px;
+  }
+}
+
+.share-code-text {
+  color: $color_2;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.go-to-room-link {
+  @include btn-in-modal;
+  width: fit-content;
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .modal-id-container {
+    width: 80%;
+    font-size: 1.7rem;
+  }
+
+  .go-to-room-link {
+    width: 80%;
+    text-align: center;
+  }
+}

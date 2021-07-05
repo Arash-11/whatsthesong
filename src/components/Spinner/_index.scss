@@ -1,0 +1,38 @@
+.overlay-background {
+  @include overlay;
+  display: flex;
+  align-items: center;
+}
+
+
+.spinner-container {
+  margin: auto;
+
+  p {
+    margin-top: 3rem;
+    color: $color_2;
+    font-family: $font_3;
+    font-size: 1.5rem;
+  }
+}
+
+
+.spinner {
+  margin: auto;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 5px solid $color_2;
+  border-top-color: transparent;
+  animation: 1.2s linear infinite spinning;
+  z-index: 1;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

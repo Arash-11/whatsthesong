@@ -1,0 +1,91 @@
+.selection-cards-container {
+  padding-top: 15vh;
+  margin: 0 auto 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $content_max_width;
+}
+
+
+.challenge-room-card-wrapper {
+  position: relative;
+
+  p {
+    position: absolute;
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: center;
+    color: $color_3;
+    font-size: 1.1rem;
+  }
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 18rem;
+  width: 20rem;
+  background-color: $color_0;
+  @include material-design-shadow-2;
+  border-radius: 8px;
+  color: $color_6;
+  font-family: $font_2;
+  font-size: 1.7rem;
+  @include material-design-shadow-hover;
+
+  &:focus {
+    outline: $color_6 solid 2px;
+  }
+
+  span {
+    margin: -1rem 0 2rem;
+    font-size: 2.6rem;
+    pointer-events: none;
+  }
+}
+
+
+.disable_link {
+  pointer-events: none;
+  @include material-design-shadow;
+  filter: brightness(70%);
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .selection-cards-container {
+    margin: 0 auto 5rem;
+    padding-top: 1rem;
+    flex-direction: column;
+    max-width: 90vw;
+  }
+
+  .challenge-room-card-wrapper p {
+    position: relative;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .card {
+    margin-top: 2rem;
+    height: 15rem;
+    width: 17rem;
+    font-size: 1.3rem;
+    @include material-design-shadow-3;
+    span {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+
+@media screen and (min-width: $mobile-750) and (max-width: $tablet-1200) {
+  .card {
+    height: 18rem;
+    width: 20rem;
+  }
+}

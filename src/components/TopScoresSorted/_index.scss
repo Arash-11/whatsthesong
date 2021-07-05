@@ -1,0 +1,84 @@
+.scores-list {
+  position: relative;
+  margin: 4rem auto 1rem;
+  width: $content_max_width / 2.2;
+  color: $color_2;
+  font-family: $font_3;
+
+  li {
+    @include players-list;
+    margin: 2rem 0;
+    height: 6rem;
+  }
+}
+
+
+.score-card {
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+
+
+.rank {
+  position: absolute;  
+  left: -5rem;
+  font-size: 1.6rem;
+}
+
+
+.scores-card__score {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .score {
+    margin-bottom: 0.2rem;
+    color: $color_6;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .points {
+    color: $color_3;
+  }
+}
+
+
+.scores-card__name {
+  padding: 1.5rem 1.7rem;
+  width: 75%;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .scores-list {
+    padding-left: 1.5rem;
+    max-width: 82vw;
+    li {
+      height: 4rem;
+    }
+  }
+
+  .rank {
+    position: absolute;
+    left: -0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .scores-card__score .score {
+    font-size: 1.4rem;
+  }
+
+  .scores-card__name {
+    font-size: 1.4rem;
+  }
+}

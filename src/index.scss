@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+:root {
+  font-size: 16px;
+}
+
+@import './scss/config';
+
+body {
+  background-color: $color_0;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.background-svg {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+  @media screen and (max-width: $tablet-1200) {
+    bottom: 1rem;
+    left: 5rem;
+    transform: scale(1.5);
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;  
+  outline-offset: $outline_offset;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+button {
+  appearance: none;
+  border: none;
+  font-family: $font_3;
+  cursor: pointer;
+  outline-offset: $outline_offset;
+}
+
+
+@import './components/Header/index';
+@import './components/TitleStatements/index';
+@import './components/CreateRoomModal/index';
+@import './components/JoinRoomModal/index';
+@import './components/Timer/index';
+@import './components/SpotifyLogin/index';
+@import './components/RoomIdModal/index';
+@import './components/TopScoresSorted/index';
+@import './components/PlayersInRoom/index';
+@import './components/Spinner/index';
+@import './pages/LandingPage/index';
+@import './pages/HomePage/index';
+@import './pages/QuizPage/index';
+@import './pages/Lobby/index';
+@import './pages/Leaderboard/index';

@@ -1,0 +1,45 @@
+.modal-overlay-background {
+  @include overlay;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $content_max_width / 2;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border_radius;
+  z-index: 1;
+  background-color: $color_7;
+  @include material-design-shadow-3;
+}
+
+.room_id {
+  font-family: $font_3;
+  width: 80%;
+}
+
+.show-no-data-msg {
+  pointer-events: none;
+}
+
+.no-room-text {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: $color_2;
+}
+
+
+@media screen and (max-width: $mobile-750) {
+  .modal {
+    width: 90vw;
+  }
+
+  .room_id {
+    width: 100%;
+  }
+}

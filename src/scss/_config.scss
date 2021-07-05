@@ -1,0 +1,111 @@
+$content_max_width: 70rem;
+
+$mobile-750: 750px;
+$tablet-1200: 1200px;
+
+$font_1: 'Krona One', sans-serif; // font weights: none available
+$font_2: 'Ubuntu', sans-serif; // font weights: 300 400 500
+$font_3: 'Roboto', sans-serif; // font weights: 300 400 500 700
+
+$header_padding: 1rem 0;
+$input_padding: 0.9rem 1.2rem;
+$button_padding: 1.6rem 0;
+$border_radius: 5px;
+$page_padding_top: 2rem;
+$modal_input_padding: 0.7rem 1rem;
+
+$header_nav_font_size: 1.3rem;
+$header_nav_font_size_mobile: 1.1rem;
+
+$color_0: #383838;
+$color_1: #ED3E44;
+$color_2: #FEFEFE;
+$color_3: #CCC;
+$color_4: #EBEBEB;
+$color_5: #7A7A7A;
+$color_6: #24E066;
+$color_7: #3D3D3D;
+
+$header_outline_style: $color_3 dashed 2px;
+$outline_offset: 0px;
+
+$box_shadow_transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+
+
+@mixin material-design-shadow {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.24);
+  transition: $box_shadow_transition;
+}
+
+@mixin material-design-shadow-2 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: $box_shadow_transition;
+}
+
+@mixin material-design-shadow-3 {
+  box-shadow: 0 13px 6px rgba(0,0,0,0.30), 0 5px 9px rgba(0,0,0,0.22);
+  transition: $box_shadow_transition;
+}
+
+@mixin material-design-shadow-hover {
+  &:hover {
+    @include material-design-shadow;
+  }
+}
+
+@mixin material-design-shadow-hover-2 {
+  &:hover {
+    @include material-design-shadow-2;
+  }
+}
+
+@mixin button {
+  padding: $button_padding;
+  border-radius: $border_radius;
+  background-color: $color_7;
+  font-size: 1.5rem;
+  @include material-design-shadow-3;
+  @include material-design-shadow-hover;
+  &:focus {
+    outline: $color_6 solid 3px;
+  }
+}
+
+@mixin overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.5);
+}
+
+@mixin btn-in-modal {
+  @include button;
+  padding: $modal_input_padding;  
+  margin: 0;
+  background-color: transparent;
+  color: $color_6;
+  border: solid 2px $color_6;
+  box-shadow: none;
+  &:focus {
+    outline: $color_2 dashed 1px;
+    outline-offset: 3px;
+  }
+}
+
+@mixin page-title {
+  color: $color_2;
+  font-family: $font_2;
+  text-align: center;
+}
+
+@mixin players-list {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-radius: $border_radius;
+  background-color: $color_0;
+  @include material-design-shadow;
+}

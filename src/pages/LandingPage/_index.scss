@@ -1,0 +1,44 @@
+.auth-error-msg {
+  position: absolute;
+  bottom: 7rem;
+  padding: $input_padding;
+  padding-right: 2.5rem;
+  width: 26rem;
+  border-radius: 5px;
+  background-color: $color_1;
+  font-family: $font_3;
+  font-size: 1.3rem;
+  animation: slideUp 0.5s ease-in 0s;
+  @include material-design-shadow;
+  
+  @keyframes slideUp {
+    from {
+      bottom: -5rem;
+    }
+    to {
+      bottom: 7rem;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    background: transparent;
+    color: $color_2;
+    font-size: 1.9rem;
+  }
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .auth-error-msg {
+    width: 20rem;
+    font-size: 1rem;
+    button {
+      top: 0.4rem;
+      right: 1.1rem;
+      font-size: 1.7rem;
+    }
+  }
+}

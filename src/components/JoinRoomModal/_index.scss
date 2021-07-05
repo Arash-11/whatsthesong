@@ -1,0 +1,56 @@
+.join-room-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: $font_3;
+
+  label {
+    display: block;
+    margin-bottom: 0.7rem;
+    width: 100%;
+    color: $color_2;
+    font-size: 1rem;
+  }
+
+  input {
+    padding: $modal_input_padding;
+    width: 70%;
+    font-size: 1.3rem;
+    &:focus {
+      outline: $color_6 solid 2px;
+      outline-offset: -1px;
+    }
+  }
+
+  button {
+    width: 20%;
+  }
+}
+
+.join-room-submit-btn {
+  @include btn-in-modal;
+}
+
+
+@media screen and (max-width: $tablet-1200) {
+  .join-room-container {
+    flex-direction: column;
+    label {
+      margin: auto;
+      margin-bottom: 0.7rem;
+      width: 90%;
+    }
+    input {
+      margin: auto;      
+      width: 90%;
+    }
+    button {
+      width: 90%;
+    }
+  }
+
+  .join-room-submit-btn {
+    margin: 1rem auto 0;
+    font-size: 1.3rem;
+  }
+}
